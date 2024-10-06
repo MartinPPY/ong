@@ -25,3 +25,13 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## INICIO DE LA APLICACION
+
+se ha creado la aplicacion, sin quieren crear una pagina html deben colocar el siguiente comando en la terminal:
+- ng g c pages/nombre de la pagina
+esto creara un archivo html con su css y ts cualquier duda hablar
+
+yo cree el nav y el footer recien y creare el login y registro de usuario ahora (Martin Romero 06/10/24 16:42)
+
+
