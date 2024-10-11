@@ -13,7 +13,8 @@ export const routes: Routes = [
     },
     {
         path:'login',
-        component: LoginComponent
+        component: LoginComponent,
+        
     },
     {
         path:'registro',
@@ -25,7 +26,9 @@ export const routes: Routes = [
     },
     {
         path:'panelcontrol',
-        component: PanelControlComponent
+        component: PanelControlComponent,
+        
+
     },
     {
         path:'home',

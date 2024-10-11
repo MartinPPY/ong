@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { PanelControlComponent } from './components/panel-control/panel-control.component';
 
-
+const routes: Routes = [
+  { path: 'panel-control', component: PanelControlComponent },
+  // otras rutas para este módulo
+];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
-export class AdminOngModule { }
+export class AdminOngRoutingModule { }
