@@ -1,0 +1,39 @@
+.contendor {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 10%;
+    padding: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 90vh;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button{
+    padding: 10px 20px;
+    background-color: #31a554; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
