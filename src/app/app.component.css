@@ -1,4 +1,16 @@
-:root{
-    --bs-primary-border-subtle: #fff;
+nav{
+    background-color: var(--bs-success);
+}
 
+.navbar-brand{
+    color: white;
+}
+
+.nav-link,
+.nav-link.active{
+    color: white;
+}
+
+.bi-flower1{
+    color: yellow;
 }
