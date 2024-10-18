@@ -1,0 +1,34 @@
+<div class="contenedor">
+    <section>
+        <div class="card-header">
+            <h2 class="card-title">Crear Campaña de Apoyo a ONG</h2>
+            <p class="card-description">Complete el formulario para iniciar una nueva campaña de apoyo.</p>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="nombre-campana">Nombre de la Campaña</label>
+                <input id="nombre-campana" type="text" placeholder="Ej: Ayuda a los niños de..." required>
+            </div>
+            <div class="form-group">
+                <label for="ong-beneficiaria">ONG Beneficiaria</label>
+                <input id="ong-beneficiaria" type="text" placeholder="Nombre de la ONG" required>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción de la Campaña</label>
+                <textarea id="descripcion" placeholder="Describe el propósito y los objetivos de la campaña..."
+                    required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="meta-recaudacion">Meta de Recaudación (€)</label>
+                <input id="meta-recaudacion" type="number" placeholder="0.00" min="0" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha-finalizacion">Fecha de Finalización</label>
+                <input id="fecha-finalizacion" type="date" required>
+            </div>
+            <div class="card-footer">
+                <button type="submit">Crear Campaña</button>
+            </div>
+        </form>
+    </section>
+</div>

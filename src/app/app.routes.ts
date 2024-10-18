@@ -4,7 +4,8 @@ import { RegistroComponent } from './pages/auth/registro/registro.component';
 import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
 import { HomeComponent } from './pages/home/home/home.component';
 import { CampaniasComponent } from './pages/campanias/campanias/campanias.component';
-import { CampaniasDetailComponent } from './pages/campanias/campanias-detail/campanias-detail.component';
+import { CampaniaAdminComponent } from './pages/campania-admin/campania-admin/campania-admin.component';
+import { CrearCampaniaComponent } from './pages/campania-admin/crear-campania/crear-campania.component';
 
 export const routes: Routes = [
     {
@@ -12,6 +13,7 @@ export const routes: Routes = [
         redirectTo: 'home',
         pathMatch:'full'
     },
+    //rutas de autenticacion y autorizacion
     {
         path: 'login',
         component: LoginComponent,
@@ -37,6 +39,15 @@ export const routes: Routes = [
     {
         path: 'campanias',
         component: CampaniasComponent,
+    },
+    //rutas de administrador de campañas
+    {
+        path: 'campanias-admin',
+        component: CampaniaAdminComponent,
+    },
+    {
+        path: 'campanias-admin/crear-campania',
+        component: CrearCampaniaComponent,
     },
     {
         path: '**',
