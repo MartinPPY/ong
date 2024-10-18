@@ -6,6 +6,8 @@ import { HomeComponent } from './pages/home/home/home.component';
 import { CampaniasComponent } from './pages/campanias/campanias/campanias.component';
 import { CampaniaAdminComponent } from './pages/campania-admin/campania-admin/campania-admin.component';
 import { CrearCampaniaComponent } from './pages/campania-admin/crear-campania/crear-campania.component';
+import { EstadoCampaniaComponent } from './pages/campania-admin/estado-campania/estado-campania.component';
+import { ReportesComponent } from './pages/campania-admin/reportes/reportes.component';
 
 export const routes: Routes = [
     {
@@ -46,8 +48,16 @@ export const routes: Routes = [
         component: CampaniaAdminComponent,
     },
     {
-        path: 'campanias-admin/crear-campania',
+        path: 'campania-admin/crear-campania',
         component: CrearCampaniaComponent,
+    },
+    {
+        path: 'campania-admin/estado-campania',
+        component: EstadoCampaniaComponent,
+    },
+    {
+        path: 'campania-admin/reportes',
+        component: ReportesComponent,
     },
     {
         path: '**',
