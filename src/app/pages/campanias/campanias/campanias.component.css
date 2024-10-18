@@ -1,0 +1,10 @@
+section{
+    padding: 2vh;
+    display: flex;
+    gap: 6vh;
+}
+
+.modal-header{
+    display: flex;
+    flex-direction: column;
+}
