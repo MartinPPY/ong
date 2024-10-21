@@ -1,8 +1,7 @@
-body {
-    font-family: Arial, sans-serif;
-    height: 80vh;
-    margin: 0;
-    background-color: #f0f0f0;
+section{
+    display: flex;
+    justify-content: center;
+    padding: 2vh;
 }
 
 .container {
