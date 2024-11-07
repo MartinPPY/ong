@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../services/auth/auth.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-forgot-password',
@@ -7,14 +9,23 @@ import { Router } from '@angular/router';
   styleUrl: './forgot-password.component.css'
 })
 export class ForgotPasswordComponent {
+  forgotForm!: FormGroup
 
-  constructor(private router:Router){
+  constructor(private _auth: AuthService, private fb: FormBuilder) {
+    this.forgotForm = fb.group({
+      correo: ['', [Validators.required, Validators.email]]
+    })
+  }
+
+  forgotPassword() {
+    if (!this._auth.validarCampos(this.forgotForm)) {
+      return
+    }
 
   }
 
-
-  recuperarContrasena(){
-    this.router.navigate(['login'])
-
+  validarCampo(nombre: string): string {
+    return this._auth.validarCampo(nombre, this.forgotForm)
   }
+
 }

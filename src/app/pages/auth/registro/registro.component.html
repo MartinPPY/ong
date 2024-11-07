@@ -1,48 +1,50 @@
 <main class="container-fluid">
   <section class="row">
-    <form class="col-md-6" method="post">
+    <form class="col-md-6" [formGroup]="formularioRegistro" (ngSubmit)="registrar()">
       <fieldset>
         <h5>Registro de usuario</h5>
         <h6>Completa los campos para crear tu perfil de usuario</h6>
       </fieldset>
+
       <div class="mb-3">
         <label for="name" class="form-label">Nombre completo</label>
-        <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
-        <div id="nameHelp" class="form-text">Ingresa tu nombre completo</div>
+        <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre completo"
+          formControlName="nombre" />
+        <div class="text-danger">{{validarCampo('nombre')}}</div>
       </div>
-      <div class="mb-3">
+
+      <div class="mb-3"> 
         <label for="email" class="form-label">Correo Electronico</label>
-        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">Ingresa tu correo electronico</div>
+        <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electronico"
+          formControlName="correo" />
+        <div class="text-danger">{{validarCampo('correo')}}</div>
       </div>
+
       <div class="mb-3">
         <label for="password" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="password">
-        <div id="passwordHelp" class="form-text">Ingresa tu contraseña</div>
+        <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña"
+          formControlName="clave" />
+        <div class="text-danger">{{validarCampo('clave')}}</div>
       </div>
-      <div class="form-check">
-        <h5 class="form-text">Indica cual sera tu tipo de usuario</h5>
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        <label class="form-check-label" for="flexRadioDefault1">
-          Usuario visitante
-        </label>
+
+      <div class="mb-3">
+        <label for="ocupation">Perfil de usuario</label>
+        <select class="form-select" id="ocupation" formControlName="ocupacion">
+          <option value="administrador-campaing">
+            Administrador de campañas
+          </option>
+          <option value="administrador-ong">
+            Administrador de Life & Sustainability Today
+          </option>
+          <option value="user">No poseo un cargo de administrador</option>
+        </select>
+        <div class="text-danger">{{validarCampo('ocupacion')}}</div>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-        <label class="form-check-label" for="flexRadioDefault2">
-          Administrador de campañas
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-        <label class="form-check-label" for="flexRadioDefault2">
-          Administrador de la ONG
-        </label>
-      </div>
+
       <fieldset class="form-options">
-        <a href="/login">Ya tengo una cuenta</a>
+        <a routerLink="/login">Ya tengo una cuenta</a>
       </fieldset>
-      <button type="submit" class="btn btn-success" (click)="registrarUsuario()">Registrame</button>
+      <button type="submit" class="btn btn-success">Registrame</button>
     </form>
   </section>
 </main>

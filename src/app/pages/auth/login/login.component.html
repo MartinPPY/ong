@@ -1,29 +1,33 @@
-@if(cargando){
-    <mat-progress-bar mode="query"></mat-progress-bar>
-}
-
 <main class="container-fluid">
     <section class="row">
-        <form class="col-md-6" method="post">
+        <form class="col-md-6" [formGroup]="loginForm">
+
             <fieldset>
                 <h5>Inicio de Sesión</h5>
                 <h6>Completa los campos para ingresar con tu perfil de usuario</h6>
             </fieldset>
+
             <div class="mb-3">
                 <label for="email" class="form-label">Correo Electronico</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">Ingresa tu correo electronico</div>
+                <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electronico"
+                    formControlName="correo">
+                <div class="text-danger">{{validarCampo('correo')}}</div>
             </div>
+
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password">
-                <div id="passwordHelp" class="form-text">Ingresa tu contraseña</div>
+                <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña"
+                    formControlName="clave">
+                <div class="text-danger">{{validarCampo('clave')}}</div>
             </div>
+
             <fieldset class="form-options">
-                <a href="/forgot-password">¿Olvidaste tu contraseña?</a>
-                <a href="/registro">Registrame</a>
+                <a routerLink="/forgot-password">¿Olvidaste tu contraseña?</a>
+                <a routerLink="/registro">Registrame</a>
             </fieldset>
-            <button type="submit" class="btn btn-success" (click)="login()">Ingresar</button>
+
+            <button type="submit" class="btn btn-success">Ingresar</button>
+
         </form>
     </section>
 </main>

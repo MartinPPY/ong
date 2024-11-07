@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { Router } from '@angular/router';
+import { AuthService } from '../../../services/auth/auth.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,18 +11,18 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  cargando: boolean = false
+  loginForm!: FormGroup
 
-  constructor(private router: Router) {
 
+  constructor(private router: Router, private _auth: AuthService, private fb: FormBuilder) {
+    this.loginForm = fb.group({
+      correo: ['', [Validators.required, Validators.email]],
+      clave: ['', [Validators.required, Validators.email]],
+    })
   }
 
-
-  login() {
-    this.cargando = true
-    setTimeout(() => {
-    }, 10000);
-    this.router.navigate(['home'])
+  validarCampo(nombre: string): string {
+    return this._auth.validarCampo(nombre, this.loginForm)
   }
 
 }

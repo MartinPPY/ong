@@ -5,6 +5,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { RouterLink } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +14,8 @@ import { RouterLink } from '@angular/router';
   imports: [
     CommonModule,
     MatProgressBarModule,
-    RouterLink
+    RouterLink,
+    ReactiveFormsModule
   ],
   exports: [RegistroComponent,LoginComponent,ForgotPasswordComponent]
 })
