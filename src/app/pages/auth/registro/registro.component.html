@@ -8,12 +8,19 @@
 
       <div class="mb-3">
         <label for="name" class="form-label">Nombre completo</label>
-        <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre completo"
+        <input type="text" class="form-control" id="name" placeholder="Ingresa tu primer nombre"
           formControlName="nombre" />
         <div class="text-danger">{{validarCampo('nombre')}}</div>
       </div>
 
-      <div class="mb-3"> 
+      <div class="mb-3">
+        <label for="apellido" class="form-label">Nombre completo</label>
+        <input type="text" class="form-control" id="apellido" placeholder="Ingresa tus apellidos"
+          formControlName="apellido"/>
+        <div class="text-danger">{{validarCampo('apellido')}}</div>
+      </div>
+
+      <div class="mb-3">
         <label for="email" class="form-label">Correo Electronico</label>
         <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electronico"
           formControlName="correo" />

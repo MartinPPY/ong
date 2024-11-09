@@ -17,6 +17,7 @@ export class RegistroComponent {
     this.formularioRegistro = fb.group({
 
       nombre: ['', Validators.required],//required significa que el campo es requerido
+      apellido: ['', Validators.required],//required significa que el campo es requerido
       correo: ['', [Validators.required, Validators.email]], //ademas de required se valida si el correo es valido
       clave: ['', Validators.required],
       ocupacion: ['', Validators.required]
@@ -30,14 +31,20 @@ export class RegistroComponent {
     if (!this._auth.validarCampos(this.formularioRegistro)) {
       return
     }
-    console.log(this.formularioRegistro.value)
-
+    const data = {
+      nombre: this.formularioRegistro.get('nombre')?.value,
+      apellido: this.formularioRegistro.get('apellido')?.value,
+      cargo: this.formularioRegistro.get('ocupacion')?.value,
+      email: this.formularioRegistro.get('correo')?.value,
+      password: this.formularioRegistro.get('clave')?.value,
+    }
+    console.log(data)
+    //this._auth.registrar(data)
   }
 
+
   validarCampo(nombre: string): string {
-
     return this._auth.validarCampo(nombre, this.formularioRegistro)
-
   }
 
 

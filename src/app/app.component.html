@@ -30,9 +30,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Panel de control</a>
                 </li>
+
+                @if (verificarToken()) {
                 <li class="nav-item">
-                    <a class="nav-link" href="/login">Cerrar Sesión</a>
+                    <a class="nav-link" href="#">Panel de control</a>
                 </li>
+                }
             </ul>
         </div>
     </div>

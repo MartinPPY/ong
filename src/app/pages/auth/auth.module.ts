@@ -6,17 +6,19 @@ import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { RouterLink } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
 @NgModule({
-  declarations: [RegistroComponent,LoginComponent,ForgotPasswordComponent],
+  declarations: [RegistroComponent, LoginComponent, ForgotPasswordComponent],
   imports: [
     CommonModule,
     MatProgressBarModule,
     RouterLink,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  exports: [RegistroComponent,LoginComponent,ForgotPasswordComponent]
+  exports: [RegistroComponent, LoginComponent, ForgotPasswordComponent]
 })
 export class AuthModule { }

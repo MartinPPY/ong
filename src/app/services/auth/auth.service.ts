@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MensajeriaService } from '../mensajeria/mensajeria.service';
+import { HttpClient } from '@angular/common/http';
+import { lastValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
+  urlPrueba: string = 'http://localhost:3000'
+  token: any
 
-  constructor(private _mensajeria: MensajeriaService) { }
-
-
+  constructor(private _mensajeria: MensajeriaService, private http: HttpClient) { }
 
   validarCampo(nombre: string, formulario: FormGroup): string {
 
@@ -35,6 +38,25 @@ export class AuthService {
     }
     return true
 
+  }
+
+  verificarToken(): boolean {
+    return true
+  }
+
+  async registrar(data: any) {
+
+    try {
+
+      const results = await lastValueFrom(this.http.post(`${this.urlPrueba}/auth/register`, data))
+      console.log(results)
+
+    } catch (error) {
+
+      console.log(error)
+
+    }
+    
   }
 
 }
