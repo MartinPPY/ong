@@ -15,7 +15,15 @@ export class MensajeriaService {
       title: "ATENCION!",
       text: mensaje
     });
+  }
 
+  alertSucces(mensaje: string) {
+    Swal.fire({
+      icon: "success",
+      title: `${mensaje}`,
+      showConfirmButton: false,
+      timer: 1500
+    });
   }
 
 }

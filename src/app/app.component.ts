@@ -14,18 +14,11 @@ import { AuthService } from './services/auth/auth.service';
   styleUrl: './app.component.css'
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent{
   title = 'app';
 
   constructor(private _auth: AuthService) {}
 
-  ngOnInit(){
-    if(!localStorage.getItem('usuario')){
-      alert('no hay usuarios en el localstorage!')
-    }else{
-      alert('hay usuarios en el localstorage  ')
-    }
-  }
 
 
 }

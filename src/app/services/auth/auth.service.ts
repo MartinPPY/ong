@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MensajeriaService } from '../mensajeria/mensajeria.service';
 import { HttpClient } from '@angular/common/http';
-import { lastValueFrom } from 'rxjs';
+import { lastValueFrom, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,6 @@ import { lastValueFrom } from 'rxjs';
 
 export class AuthService {
   urlPrueba: string = 'http://localhost:3000'
-  token: any
 
   constructor(private _mensajeria: MensajeriaService, private http: HttpClient) { }
 
@@ -40,20 +39,8 @@ export class AuthService {
 
   }
 
-  async registrar(data: any) {
-
-    try {
-
-      const results: any = await lastValueFrom(this.http.post(`${this.urlPrueba}/auth/register`, data))
-      console.log(results)
-      localStorage.setItem('usuario', JSON.stringify(results.usuario))
-
-    } catch (error) {
-
-      console.log(error)
-
-    }
-
+  registrar(data: any): Observable<any> {
+    return this.http.post(`${this.urlPrueba}/auth/register`, data)
   }
 
 }

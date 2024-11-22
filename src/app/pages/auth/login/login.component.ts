@@ -29,7 +29,7 @@ export class LoginComponent {
     if (!this._auth.validarCampos(this.loginForm)) {
       return
     }
-    console.log(this.loginForm.value)
+
   }
 
 }
