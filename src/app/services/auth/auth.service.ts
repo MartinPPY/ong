@@ -40,23 +40,20 @@ export class AuthService {
 
   }
 
-  verificarToken(): boolean {
-    return true
-  }
-
   async registrar(data: any) {
 
     try {
 
-      const results = await lastValueFrom(this.http.post(`${this.urlPrueba}/auth/register`, data))
+      const results: any = await lastValueFrom(this.http.post(`${this.urlPrueba}/auth/register`, data))
       console.log(results)
+      localStorage.setItem('usuario', JSON.stringify(results.usuario))
 
     } catch (error) {
 
       console.log(error)
 
     }
-    
+
   }
 
 }

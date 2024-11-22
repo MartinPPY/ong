@@ -39,7 +39,7 @@ export class RegistroComponent {
       password: this.formularioRegistro.get('clave')?.value,
     }
     console.log(data)
-    //this._auth.registrar(data)
+    this._auth.registrar(data)
   }
 
 

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { AuthModule } from './pages/auth/auth.module';
 import { CampaniasModule } from './pages/campanias/campanias.module';
 import { CampaniaAdminModule } from './pages/campania-admin/campania-admin.module';
-import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2'
 import { AuthService } from './services/auth/auth.service';
 
 
@@ -15,16 +14,18 @@ import { AuthService } from './services/auth/auth.service';
   styleUrl: './app.component.css'
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
 
-  constructor(private _auth: AuthService) {
+  constructor(private _auth: AuthService) {}
 
+  ngOnInit(){
+    if(!localStorage.getItem('usuario')){
+      alert('no hay usuarios en el localstorage!')
+    }else{
+      alert('hay usuarios en el localstorage  ')
+    }
   }
 
-
-  verificarToken(): boolean {
-    return this._auth.verificarToken()
-  }
 
 }

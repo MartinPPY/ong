@@ -1,6 +1,6 @@
 <main class="container-fluid">
     <section class="row">
-        <form class="col-md-6" [formGroup]="loginForm">
+        <form class="col-md-6" [formGroup]="loginForm" (ngSubmit)="login()">
 
             <fieldset>
                 <h5>Inicio de Sesión</h5>

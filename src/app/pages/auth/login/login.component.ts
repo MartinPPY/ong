@@ -17,12 +17,19 @@ export class LoginComponent {
   constructor(private router: Router, private _auth: AuthService, private fb: FormBuilder) {
     this.loginForm = fb.group({
       correo: ['', [Validators.required, Validators.email]],
-      clave: ['', [Validators.required, Validators.email]],
+      clave: ['', Validators.required],
     })
   }
 
   validarCampo(nombre: string): string {
     return this._auth.validarCampo(nombre, this.loginForm)
+  }
+
+  login() {
+    if (!this._auth.validarCampos(this.loginForm)) {
+      return
+    }
+    console.log(this.loginForm.value)
   }
 
 }
