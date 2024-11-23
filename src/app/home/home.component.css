@@ -1,0 +1,35 @@
+main,
+section {
+    padding: 2vh;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+
+}
+
+article{
+    padding: 2vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.art1-options{
+    flex-wrap: wrap;
+    display: flex;
+    gap: 2vh;
+}
+
+.sect-2{
+    background-color: lightgray;
+    display: flex;
+    gap: 2vh;
+}
+
+.sect-3{
+    display: flex;
+    gap: 2vh;
+}
