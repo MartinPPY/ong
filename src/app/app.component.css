@@ -1,0 +1,8 @@
+nav {
+    background-color: var(--bs-success);
+}
+
+.navbar-brand,
+.nav-link {
+    color: white;
+}
