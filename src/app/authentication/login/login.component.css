@@ -1,0 +1,23 @@
+main,section,form{
+    padding: 2vh;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.login-options{
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-options > a{
+    text-decoration: none;
+    
+}
