@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
 import { RouterLink } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -10,7 +12,9 @@ import { RouterLink } from '@angular/router';
   declarations: [RegistroComponent, LoginComponent],
   imports: [
     CommonModule,
-    RouterLink
+    RouterLink,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
 })
 export class AuthenticationModule { }

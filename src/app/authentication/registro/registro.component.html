@@ -1,1 +1,42 @@
-<p>registro works!</p>
+<main class="container-fluid">
+    <section class="row">
+        <form class="col-lg-6" [formGroup]="registroForm" (ngSubmit)="registrar()">
+            <div class="mb-3">
+                <h1>Registro de usuario</h1>
+                <h6 class="card-subtitle">Completa los campos para registrarte en nuestro sitio web</h6>
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombres</label>
+                <input type="text" class="form-control" id="name" placeholder="Ingresa tus nombres"
+                    formControlName="nombre">
+            </div>
+            <div class="mb-3">
+                <label for="last-name" class="form-label">Apellidos</label>
+                <input type="text" class="form-control" id="last-name" placeholder="Ingresa tus apellidos"
+                    formControlName="apellido">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo electronico</label>
+                <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electronico"
+                    formControlName="email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="password" placeholder="Ingresa tu Contraseña"
+                    formControlName="password">
+            </div>
+            <div class="mb-3">
+                <select class="form-select" aria-label="Default select example" formControlName="cargo">
+                    <option value="">Selecciona tu cargo</option>
+                    <ng-container *ngFor="let item of cargos">
+                        <option value="{{item.id}}">{{item.descripcion}}</option>
+                    </ng-container>
+                </select>
+            </div>
+            <div class="mb-3 login-options">
+                <a routerLink="/login">Ya tengo una cuenta</a>
+            </div>
+            <button type="submit" class="btn btn-success">Ingresar</button>
+        </form>
+    </section>
+</main>
